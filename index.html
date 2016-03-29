@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru-RU"></html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title> Watermark Generator</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<section class="section">
+			<div class="preview">
+				<div class="preview__wrapper">
+					<div class="preview__header">
+						<h1 class="preview__header-text">Генератор водяных знаков</h1>
+					</div>
+					<div class="preview__window">
+						<div class="preview__window-img"> <img src="" alt="Обрабатываемое изображение" class="processed_img"/>
+							<div class="tiling"><img src="" alt="Обрабатываемый вотермарк" id="draggable" class="processed_wm"/></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="settings">
+				<div class="settings__header">
+					<h2 class="settings__header-text">Настройки</h2>
+				</div>
+				<form enctype="miltipart/form-data" method="post" id="files-form" class="settings__files">
+					<label for="source" class="input__label input__label-img">Исходное изображение</label>
+					<div class="input__file-container">
+						<input type="text" class="input__file-name"/>
+						<label for="source" class="input__file-button"></label>
+						<label for="source" class="input__fake-file"></label>
+						<input type="file" name="source" id="source" class="input__file"/>
+					</div>
+					<div class="wm-wrap disable">
+						<label for="watermark" class="input__label input__label-wm">Водяной знак</label>
+						<div class="input__file-container">
+							<input type="text" class="input__file-name"/>
+							<label for="watermark" class="input__file-button"></label>
+							<label for="watermark" class="input__fake-file"></label>
+							<input type="file" name="watermark" id="watermark" class="input__file"/>
+						</div>
+					</div>
+				</form>
+				<div class="settings-wrap disable">
+					<div class="settings__position">
+						<div class="settings__name">
+							<div class="input__label input__label_position">Положение</div>
+							<div class="mode">
+								<div class="mode__tile"></div>
+								<div class="mode__single"></div>
+							</div>
+						</div>
+						<div class="map">
+							<ul class="map__list">
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+								<li class="map__item"></li>
+							</ul>
+							<div class="map__tiling">
+								<div class="map__margin map__margin_left"></div>
+								<div class="map__margin map__margin_bottom"></div>
+							</div>
+						</div>
+						<div class="coords">
+							<div class="coords__x">
+								<label for="coords-x" class="input__label input__label_coords">X</label>
+								<input id="coords-x" name="coords-x" value="0" class="coords__input"/>
+							</div>
+							<div class="coords__y">
+								<label for="coords-y" class="input__label input__label_coords">Y</label>
+								<input id="coords-y" name="coords-y" value="0" class="coords__input"/>
+							</div>
+						</div>
+					</div>
+					<div class="settings__opacity">
+						<div class="input__label input__label_opacity">Прозрачность</div>
+						<div class="opacity__block"></div>
+						<div class="input__label input__label_scale">Размер водяного знака</div>
+						<div class="scale__block"></div>
+					</div>
+					<div class="settings__buttons">
+						<input type="reset" value="Сброс" class="button button__reset"/>
+						<input type="submit" value="Скачать" id="files-upload" class="button button__submit"/>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer class="footer">&copy 2016, Это мой сайт, пожалуйста, не копируйте и не воруйте его</footer>
+	<aside class="aside">
+		<div class="lang">
+			<ul class="lang__list">
+				<li class="lang__item"><a href="" id="rus" class="lang__link">Рус</a></li>
+				<li class="lang__item"><a href="" id="eng" class="lang__link">Eng</a></li>
+			</ul>
+		</div>
+		<div class="socials">
+			<div class="socials__button">
+				<div class="socials__button_img"></div>
+			</div>
+			<ul class="socials__list">
+				<li class="socials__item"><a href="" class="socials__link_fb socials__link"></a></li>
+				<li class="socials__item"><a href="" class="socials__link_tw socials__link"></a></li>
+				<li class="socials__item"><a href="" class="socials__link_vk socials__link"></a></li>
+			</ul>
+		</div>
+	</aside>
+	<script src="js/jquery.js"></script>
+	<script src="js/path.js"></script>
+</body>
